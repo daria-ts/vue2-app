@@ -1,20 +1,30 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <style lang="scss">
+@import "@/global-styles/colors.scss";
+@import "@/global-styles/typography.scss";
+@import "@/global-styles/tokens.scss";
+
+body {
+  background-color: $neutral-010;}
+
+h1 {
+  @include h-xxl($neutral-700);
+}
+
+p {
+  @include p-lg;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: $pfont;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
   text-align: center;
-  color: #2c3e50;
+  color: $neutral-700;
+  
 }
 
 #nav {
@@ -22,10 +32,10 @@
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: $neutral-500;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: $primary-500;
     }
   }
 }
